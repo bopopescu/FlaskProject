@@ -13,10 +13,8 @@ def hello():
     if request.method == "POST":
         zipcode = request.form["zipcode"]
         db.execute("SELECT * FROM TBL_NAME WHERE Zipcode="+ zipcode)
-
         result = db.fetchall()
-
-       return render_template("index.html", addresses=result)
+        return render_template("index.html", addresses=result)
     return render_template("index.html")
 
 
